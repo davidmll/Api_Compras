@@ -1,6 +1,7 @@
 <table>
   <thead>
     <tr>
+      <th>Código</th>
       <th>nombre</th>
       <th>Apellidos</th>
       <th>Empresa</th>
@@ -14,6 +15,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of clientes">
+      <td>{{item.codCliente}}</td>
       <td>{{ item.nombre }}</td>
       <td>{{ item.apellidos }}</td>
       <td>{{ item.empresa }}</td>

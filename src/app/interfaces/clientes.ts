@@ -1,4 +1,5 @@
 export interface Clientes {
+  codCliente:number,
   nombre:string;
   apellidos:string;
   empresa:string;

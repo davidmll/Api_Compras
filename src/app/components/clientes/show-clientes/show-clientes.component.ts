@@ -16,6 +16,7 @@ export class ShowClientesComponent implements OnInit {
 
   clientes: Clientes[] = [
     {
+      codCliente:1001,
       nombre:"Ronaldo",
       apellidos:"Lopez",
       empresa:"Loyal",
@@ -28,7 +29,7 @@ export class ShowClientesComponent implements OnInit {
   ]
 
   nuevo: Clientes={
-
+    codCliente:0,
     nombre:"",
     apellidos:"",
     empresa:"",
