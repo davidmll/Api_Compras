@@ -5,11 +5,12 @@ import { MainComponent } from './showArticulos/main.component';
 import { ArticulosComponent } from './tableArticulo/articulos.component';
 import { AgregarComponent } from './addArticulo/agregar.component';
 import { ArticuloService } from '../../services/articulos.service';
+import { UpdateArticulosComponent } from './update-articulos/update-articulos.component';
 
 @NgModule({
-  declarations: [MainComponent, ArticulosComponent, AgregarComponent],
+  declarations: [MainComponent, ArticulosComponent, AgregarComponent, UpdateArticulosComponent],
   imports: [CommonModule, FormsModule],
-  exports: [MainComponent, ArticulosComponent],
+  exports: [MainComponent, ArticulosComponent,UpdateArticulosComponent],
   providers:[ArticuloService]
 })
 export class ArticulosModule {}
