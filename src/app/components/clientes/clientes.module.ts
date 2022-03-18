@@ -7,8 +7,6 @@ import { FormsModule } from '@angular/forms';
 import { TableClientesComponent } from './table-clientes/table-clientes.component';
 import { ClientesService } from 'src/app/services/clientes.service';
 
-
-
 @NgModule({
   declarations: [
     AddClientesComponent,
@@ -29,4 +27,4 @@ import { ClientesService } from 'src/app/services/clientes.service';
     ClientesService
   ]
 })
-export class ClientesModule { }
+export class ClientesModule {}

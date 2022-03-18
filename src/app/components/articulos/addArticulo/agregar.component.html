@@ -1,0 +1,15 @@
+<!-- <p>agregar works!</p> -->
+<h3>Nuevo artículo</h3>
+<hr>
+<form  (ngSubmit)="agregar()">
+  <input type="text" name="codigo" placeholder="Código de artículo" [(ngModel)]="nuevo.codArticulo">
+  <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nuevo.nombre">
+  <input type="text" name="desc" placeholder="Descripción" [(ngModel)]="nuevo.descripcion">
+  <input type="text" name="precio" placeholder="Precio unitario" [(ngModel)]="nuevo.precio">
+  <input type="text" name="stock" placeholder="Unidades de Stock" [(ngModel)]="nuevo.stock">
+  <input type="text" name="security" placeholder="Stock de Seguridad" [(ngModel)]="nuevo.securityStock">
+  <input type="text" name="imagen" placeholder="Imagen" [(ngModel)]="nuevo.imagen">
+
+  <button type="submit">Agregar</button>
+</form>
+
