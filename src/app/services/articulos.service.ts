@@ -11,7 +11,15 @@ export class ArticuloService {
   constructor() {
     console.log('Servicio iniciado');
   }
-  addArticulos(articulo:Articulos){
-  this._articulos.push(articulo);
+
+  addArticulos(articulo: Articulos) {
+    this._articulos.push(articulo);
+    articulo.codArticulo = this.articulos.length;
+  }
+
+  updateArticulos(articulo: Articulos) {
+    console.log(articulo.codArticulo);
+    // this._articulos.indexOf(articulo);
+    this._articulos[articulo.codArticulo - 1] = articulo;
   }
 }

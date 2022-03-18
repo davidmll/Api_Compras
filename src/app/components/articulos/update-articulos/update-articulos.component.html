@@ -1,14 +1,13 @@
 <!-- <p>update-articulos works!</p> -->
-<h3>Nuevo artículo</h3>
+<h3>Editar artículo</h3>
 <hr>
-<form>
-  <input type="number" name="codigo" placeholder="Código de artículo" >
-  <input type="text" name="nombre" placeholder="Nombre">
-  <input type="text" name="desc" placeholder="Descripción">
-  <input type="number" name="precio" placeholder="Precio unitario">
-  <input type="number" name="stock" placeholder="Unidades de Stock">
-  <input type="number" name="security" placeholder="Stock de Seguridad">
-  <input type="text" name="imagen" placeholder="Imagen">
+<form (ngSubmit)="update()" [formGroup]="formularioArti">
+  <input type="text" name="nombre" placeholder="Nombre"  formControlName="nombre">
+  <input type="text" name="desc" placeholder="Descripción" formControlName="descripcion">
+  <input type="number" name="precio" placeholder="Precio unitario" formControlName="precio">
+  <input type="number" name="stock" placeholder="Unidades de Stock" formControlName="stock">
+  <input type="number" name="security" placeholder="Stock de Seguridad" formControlName="securityStock">
+  <input type="text" name="image" placeholder="Imagen" formControlName="imagen">
 
-  <button type="submit">Agregar</button>
+  <button type="submit">Confirmar</button>
 </form>
