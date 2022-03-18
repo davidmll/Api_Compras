@@ -9,6 +9,7 @@ import { ArticuloService } from 'src/app/services/articulos.service';
 export class ShowArticuloComponent implements OnInit {
   constructor(private articuloService: ArticuloService) {}
 
+
   ngOnInit(): void {}
 
   articulo: Articulos[] = [
