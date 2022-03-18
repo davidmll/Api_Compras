@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ShowComponent } from './show/show.component';
-import { AddComponent } from './add/add.component';
-import { UpdateComponent } from './update/update.component';
+import { AddClientesComponent } from './add-clientes/add-clientes.component';
+import { ShowClientesComponent } from './show-clientes/show-clientes.component';
+import { UpdateClientesComponent } from './update-clientes/update-clientes.component';
 
 
 
 @NgModule({
   declarations: [
-  
-  
-    ShowComponent,
-          AddComponent,
-          UpdateComponent
+    AddClientesComponent,
+    ShowClientesComponent,
+    UpdateClientesComponent
   ],
   imports: [
     CommonModule
