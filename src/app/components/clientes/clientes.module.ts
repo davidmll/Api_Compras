@@ -8,11 +8,12 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AddClientesComponent,
-
     ShowClientesComponent,
-
     UpdateClientesComponent,
   ],
-  imports: [CommonModule, FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule
+  ]
 })
 export class ClientesModule {}

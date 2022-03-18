@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Articulos } from 'src/app/interfaces/articulos';
 
 @Component({
@@ -13,7 +13,6 @@ export class UpdateArticulosComponent implements OnInit {
   ngOnInit(): void {}
 
   @Input() articulos: Articulos[] = [];
-  @Output() onEditArticulo: EventEmitter<Articulos> = new EventEmitter();
 
   update(e: number): void {
     console.log(e);
