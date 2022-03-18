@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { Articulos } from '../../../interfaces/articulos.interfaces';
+import { Articulos } from '../../../interfaces/articulos';
 
 @Component({
   selector: 'app-agregar',
