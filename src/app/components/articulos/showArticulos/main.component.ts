@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Articulos } from '../interfaces/articulos.interfaces';
-import { ArticuloService } from '../services/articulos.service';
+import { Articulos } from '../../../interfaces/articulos.interfaces';
+import { ArticuloService } from '../../../services/articulos.service';
 
 @Component({
   selector: 'app-main',
