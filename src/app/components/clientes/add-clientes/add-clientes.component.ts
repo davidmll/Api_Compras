@@ -32,7 +32,6 @@ export class AddClientesComponent implements OnInit {
 
     this.onNuevoClientes.emit(this.nuevo);
 
-
     this.nuevo = {
       nombre:"",
       apellidos:"",
