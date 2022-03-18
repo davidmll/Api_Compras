@@ -14,42 +14,51 @@ export class MenuComponent implements OnInit {
         {
           label:'Clientes',
           icon:'pi pi-fw pi-users',
+          routerLink: 'clientes',
           items:[
             {
               label:'Nuevo',
-              icon:'pi pi-fw pi-plus'
+              icon:'pi pi-fw pi-plus',
+              routerLink: 'clientes/nuevo'
             },
             {
               label:'Lista de clientes',
-              icon:'pi pi-fw pi-plus'
+              icon:'pi pi-fw pi-plus',
+              routerLink: 'clientes'
             }
           ]
         },
         {
           label:'Artículos',
           icon:'pi pi-fw pi-pencil',
+          routerLink: 'articulos',
           items:[
             {
               label:'Nuevo',
-              icon:'pi pi-fw pi-plus'
+              icon:'pi pi-fw pi-plus',
+              routerLink: 'articulos/nuevo'
             },
             {
               label:'Lista de artículos',
-              icon:'pi pi-fw pi-plus'
+              icon:'pi pi-fw pi-plus',
+              routerLink: 'articulos'
             }
           ]
         },
         {
-          label:'Ventas',
+          label:'Compras',
           icon:'pi pi-fw pi-user',
+          routerLink: 'compras',
           items:[
             {
               label:'Nueva',
-              icon:'pi pi-fw pi-plus'
+              icon:'pi pi-fw pi-plus',
+              routerLink: 'compras/nueva'
             },
             {
               label:'Lista de ventas',
-              icon:'pi pi-fw pi-user-minus'
+              icon:'pi pi-fw pi-user-minus',
+              routerLink: 'compras'
             }
           ]
         },
