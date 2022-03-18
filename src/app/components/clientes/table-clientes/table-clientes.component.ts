@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Clientes } from 'src/app/interfaces/clientes';
+import { ClientesService } from 'src/app/services/clientes.service';
 
 @Component({
   selector: 'app-table-clientes',
@@ -7,11 +9,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TableClientesComponent implements OnInit {
 
-  @Input() clientes:any[]=[];
+  clientes: Clientes[]=[];
 
-  constructor() { }
+  constructor(private servicio:ClientesService) { }
 
   ngOnInit(): void {
+    this.clientes = this.servicio.clientes;
+    console.log(this.clientes);
   }
 
 }

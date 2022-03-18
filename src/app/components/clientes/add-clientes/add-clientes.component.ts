@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Clientes } from 'src/app/interfaces/clientes';
+import { Component,  OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ClientesService } from 'src/app/services/clientes.service';
 
 @Component({
   selector: 'app-add-clientes',
@@ -9,46 +10,28 @@ import { Clientes } from 'src/app/interfaces/clientes';
 export class AddClientesComponent implements OnInit {
 
 
-  @Input() clientes:Clientes[] = [];
-  @Input() nuevo:Clientes={
-    codCliente:0,
-    nombre:"",
-    apellidos:"",
-    empresa:"",
-    puesto:"",
-    cp:0,
-    provincia:"",
-    telefono:0,
-    fechaNacimineto: new Date()
-  }
+  formularioClientes!: FormGroup;
 
-  @Output() onNuevoClientes: EventEmitter<Clientes> = new EventEmitter()
-
-
-
-  add():void{
-    if(this.nuevo.nombre.trim().length ===0){
-      return;
-    }
-
-    this.onNuevoClientes.emit(this.nuevo);
-
-    this.nuevo = {
-      codCliente:0,
-      nombre:"",
-      apellidos:"",
-      empresa:"",
-      puesto:"",
-      cp:0,
-      provincia:"",
-      telefono:0,
-      fechaNacimineto: new Date()
-    }
-  }
-
-  constructor(){}
+  constructor(private servicio:ClientesService) { }
 
   ngOnInit(): void {
+
+    this.formularioClientes = new FormGroup({
+      nombre: new FormControl('', Validators.required),
+      apellidos: new FormControl('', Validators.required),
+      empresa: new FormControl('', Validators.required),
+      puesto: new FormControl('', Validators.required),
+      cp: new FormControl('', Validators.required),
+      provincia: new FormControl('', Validators.required),
+      telefono: new FormControl('', Validators.required),
+      fechaNacimiento: new FormControl('', Validators.required)
+
+    });
+  }
+
+  add():void{
+    this.servicio.addClientes(this.formularioClientes.value);
+    console.log(this.servicio);
   }
 
 }

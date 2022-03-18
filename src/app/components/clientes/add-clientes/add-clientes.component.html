@@ -1,13 +1,18 @@
 <h3>Nuevo Cliente</h3>
 <hr>
-<form  (ngSubmit)="add()">
-  <input type="text" name="nombre" placeholder="Nuevo Nombre: " [(ngModel)]="nuevo.nombre">
-  <input type="text" name="apellidos" placeholder="Apellidos: " [(ngModel)]="nuevo.apellidos">
-  <input type="text" name="empresa" placeholder="Empresa: " [(ngModel)]="nuevo.empresa">
-  <input type="text" name="puesto" placeholder="Nuevo Puesto: " [(ngModel)]="nuevo.puesto">
-  <input type="number" name="CP" placeholder="Codigo Postal: " [(ngModel)]="nuevo.cp">
-  <input type="text" name="provincia" placeholder="Provincia: " [(ngModel)]="nuevo.provincia">
-  <input type="number" name="telefono" placeholder="Nuevo Telefono: " [(ngModel)]="nuevo.telefono">
-  <input type="date" name="fecha" placeholder="Fecha: " [(ngModel)]="nuevo.fechaNacimineto">
+<form (ngSubmit)="add()" [formGroup]="formularioClientes">
+  <input type="text" name="nombre" placeholder="Nuevo Nombre: " formControlName="nombre">
+  <input type="text" name="apellidos" placeholder="Apellidos: " formControlName="apellidos">
+  <input type="text" name="empresa" placeholder="Empresa: " formControlName="empresa">
+  <input type="text" name="puesto" placeholder="Nuevo Puesto: " formControlName="puesto">
+  <input type="number" name="CP" placeholder="Codigo Postal: " formControlName="cp">
+  <input type="text" name="provincia" placeholder="Provincia: " formControlName="provincia">
+  <input type="number" name="telefono" placeholder="Nuevo Telefono: " formControlName="telefono">
+  <input type="date" name="fecha" placeholder="Fecha: " formControlName="fechaNacimiento">
+  
   <button type="submit">Agregar</button>
 </form>
+
+
+
+

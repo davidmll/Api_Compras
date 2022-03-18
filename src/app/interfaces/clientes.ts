@@ -1,4 +1,5 @@
-export interface Clientes {
+export interface Clientes
+{
   codCliente:number,
   nombre:string;
   apellidos:string;
@@ -7,6 +8,6 @@ export interface Clientes {
   cp:number;
   provincia:string;
   telefono:number;
-  fechaNacimineto:Date;
+  fechaNacimiento:Date
 }
 

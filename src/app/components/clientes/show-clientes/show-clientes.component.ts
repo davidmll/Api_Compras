@@ -14,20 +14,7 @@ export class ShowClientesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  clientes: Clientes[] = [
-    {
-      codCliente:1001,
-      nombre:"Ronaldo",
-      apellidos:"Lopez",
-      empresa:"Loyal",
-      puesto:"Formador",
-      cp:34080,
-      provincia:"Madrid",
-      telefono:66665666,
-      fechaNacimineto: new Date()
-    }
-  ]
-
+/*
   nuevo: Clientes={
     codCliente:0,
     nombre:"",
@@ -37,11 +24,11 @@ export class ShowClientesComponent implements OnInit {
     cp:0,
     provincia:"",
     telefono:0,
-    fechaNacimineto: new Date()
+    fechaNacimiento: new Date()
   }
 
   agregarNuevoClientes(clientes: Clientes):void{
     console.log(clientes);
-  }
+  } */
 
 }

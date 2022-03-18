@@ -2,14 +2,11 @@
 <hr />
 
 <div class="row">
-  <div class="col">
+  <div class="col-6">
     <h3>Clientes</h3>
     <hr />
 
-      <app-table-clientes [clientes]="clientes"></app-table-clientes>
+      <app-table-clientes ></app-table-clientes>
   </div>
 
-  <div class="col">
-    <app-add-clientes [clientes]="clientes" (onNuevoClientes)="agregarNuevoClientes($event)"></app-add-clientes>
-  </div>
 </div>
