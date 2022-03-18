@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
         {
           label:'Clientes',
           icon:'pi pi-fw pi-users',
-          routerLink: 'clientes',
+          //routerLink: 'clientes',
           items:[
             {
               label:'Nuevo',
@@ -23,7 +23,7 @@ export class MenuComponent implements OnInit {
             },
             {
               label:'Lista de clientes',
-              icon:'pi pi-fw pi-plus',
+              icon:'pi pi-fw pi-list',
               routerLink: 'clientes'
             }
           ]
@@ -31,7 +31,7 @@ export class MenuComponent implements OnInit {
         {
           label:'Artículos',
           icon:'pi pi-fw pi-pencil',
-          routerLink: 'articulos',
+          //routerLink: 'articulos',
           items:[
             {
               label:'Nuevo',
@@ -40,7 +40,7 @@ export class MenuComponent implements OnInit {
             },
             {
               label:'Lista de artículos',
-              icon:'pi pi-fw pi-plus',
+              icon:'pi pi-fw pi-list',
               routerLink: 'articulos'
             }
           ]
@@ -48,7 +48,7 @@ export class MenuComponent implements OnInit {
         {
           label:'Compras',
           icon:'pi pi-fw pi-user',
-          routerLink: 'compras',
+          //routerLink: 'compras',
           items:[
             {
               label:'Nueva',
@@ -57,18 +57,10 @@ export class MenuComponent implements OnInit {
             },
             {
               label:'Lista de compras',
-              icon:'pi pi-fw pi-user-minus',
+              icon:'pi pi-fw pi-list',
               routerLink: 'compras'
             }
           ]
-        },
-        {
-          label:'Events',
-          icon:'pi pi-fw pi-calendar'
-        },
-        {
-          label:'Quit',
-          icon:'pi pi-fw pi-power-off'
         }
       ];
     }
