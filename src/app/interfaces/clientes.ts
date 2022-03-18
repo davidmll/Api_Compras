@@ -3,7 +3,7 @@ export interface Clientes {
   apellidos:string;
   empresa:string;
   puesto:string;
-  CP:number;
+  cp:number;
   provincia:string;
   telefono:number;
   fechaNacimineto:Date;
