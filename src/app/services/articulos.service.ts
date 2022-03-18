@@ -17,9 +17,8 @@ export class ArticuloService {
     articulo.codArticulo = this.articulos.length;
   }
 
-  updateArticulos(articulo: Articulos) {
-    console.log(articulo.codArticulo);
+  updateArticulos(codigo: number, articulo: Articulos) {
     // this._articulos.indexOf(articulo);
-    this._articulos[articulo.codArticulo - 1] = articulo;
+    this._articulos[codigo] = articulo;
   }
 }

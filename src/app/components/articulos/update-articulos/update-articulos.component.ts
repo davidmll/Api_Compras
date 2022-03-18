@@ -14,6 +14,7 @@ export class UpdateArticulosComponent implements OnInit {
 
   constructor(private servicio:ArticuloService) {}
 
+
   ngOnInit(): void {
     this.formularioArti = new FormGroup({
       nombre: new FormControl('', Validators.required),
@@ -26,8 +27,8 @@ export class UpdateArticulosComponent implements OnInit {
     });
   }
 
-  update(): void {
-    this.servicio.updateArticulos(this.formularioArti.value);
+  update(id: number): void {
+    this.servicio.updateArticulos(id , this.formularioArti.value);
     console.log(this.servicio);
   }
 }

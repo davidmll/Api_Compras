@@ -1,7 +1,7 @@
 <!-- <p>update-articulos works!</p> -->
 <h3>Editar artículo</h3>
 <hr>
-<form (ngSubmit)="update()" [formGroup]="formularioArti">
+<form (ngSubmit)="update(0)" [formGroup]="formularioArti">
   <input type="text" name="nombre" placeholder="Nombre"  formControlName="nombre">
   <input type="text" name="desc" placeholder="Descripción" formControlName="descripcion">
   <input type="number" name="precio" placeholder="Precio unitario" formControlName="precio">
