@@ -5,17 +5,15 @@ import { ShowClientesComponent } from './show-clientes/show-clientes.component';
 import { UpdateClientesComponent } from './update-clientes/update-clientes.component';
 import { FormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [
     AddClientesComponent,
     ShowClientesComponent,
-    UpdateClientesComponent
+    UpdateClientesComponent,
   ],
   imports: [
     CommonModule,
     FormsModule
   ]
 })
-export class ClientesModule { }
+export class ClientesModule {}

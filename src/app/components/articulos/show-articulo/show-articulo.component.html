@@ -1,0 +1,16 @@
+<!-- <p>main works!</p> -->
+<h1>Artículos</h1>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <h3>Artículos</h3>
+    <hr />
+
+      <app-articulos [articulo]="articulo"></app-articulos>
+  </div>
+
+  <div class="col">
+    <app-agregar [articulos]="articulo" (onNuevoArticulo)="agregarNuevoArticulo($event)"></app-agregar>
+  </div>
+</div>
