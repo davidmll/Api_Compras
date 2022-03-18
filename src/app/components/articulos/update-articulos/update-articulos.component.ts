@@ -11,8 +11,7 @@ export class UpdateArticulosComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  @Input() articulos: Articulos[] = [];
+  
 
   update(e: number): void {
     console.log(e);

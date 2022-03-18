@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { EventEmitter } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ArticuloService } from 'src/app/services/articulos.service';
 import { Articulos } from '../../../interfaces/articulos';
 
 @Component({
@@ -10,37 +11,26 @@ import { Articulos } from '../../../interfaces/articulos';
 })
 export class AgregarComponent implements OnInit {
 
-  constructor() { }
+  formularioArti!: FormGroup;
+
+  constructor(private servicio:ArticuloService) { }
 
   ngOnInit(): void {
-  }
+    this.formularioArti = new FormGroup({
+      codArticulo: new FormControl('', Validators.required),
+      nombre: new FormControl('', Validators.required),
+      descripcion: new FormControl('', Validators.required),
+      precio: new FormControl('', Validators.required),
+      stock: new FormControl('', Validators.required),
+      securityStock: new FormControl('', Validators.required),
+      imagen: new FormControl('', Validators.required),
 
-  @Input() articulos:Articulos[]=[];
-  @Input() nuevo:Articulos={
-    codArticulo:0,
-    nombre:'',
-    descripcion:'',
-    precio:0,
-    stock:0,
-    securityStock:0,
-    imagen:''
+    });
   }
-  @Output() onNuevoArticulo:EventEmitter<Articulos>=new EventEmitter();
 
   agregar():void{
-    if(this.nuevo.nombre.trim().length===0){
-      return;
-    }
-    this.onNuevoArticulo.emit(this.nuevo);
-    this.nuevo={
-      codArticulo:0,
-      nombre:'',
-      descripcion:'',
-      precio:0,
-      stock:0,
-      securityStock:0,
-      imagen:''
-    }
+    this.servicio.addArticulos(this.formularioArti.value);
+    console.log(this.servicio);
   }
 
 }

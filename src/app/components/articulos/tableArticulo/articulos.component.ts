@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Articulos } from 'src/app/interfaces/articulos';
+import { ArticuloService } from 'src/app/services/articulos.service';
 
 @Component({
   selector: 'app-articulos',
@@ -6,14 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styles: [
   ]
 })
+
 export class ArticulosComponent implements OnInit {
-
-  constructor() { }
-
+  articulo: Articulos[]= [];
+  constructor(private servicio:ArticuloService) { }
   ngOnInit(): void {
+    this.articulo = this.servicio.articulos;
+    console.log(this.articulo);
   }
-  @Input() articulo:any[]=[];
-
-  update(num:number){}
 
 }
