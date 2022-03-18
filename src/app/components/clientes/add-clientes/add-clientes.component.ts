@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Clientes } from 'src/app/interfaces/clientes';
 
 @Component({
   selector: 'app-add-clientes',
@@ -7,7 +8,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddClientesComponent implements OnInit {
 
-  constructor() { }
+
+  @Input() clientes:Clientes[] = [];
+  @Input() nuevo:Clientes={
+    nombre:"",
+    apellidos:"",
+    empresa:"",
+    puesto:"",
+    cp:0,
+    provincia:"",
+    telefono:0,
+    fechaNacimineto: new Date()
+  }
+
+  @Output() onNuevoClientes: EventEmitter<Clientes> = new EventEmitter()
+
+
+
+  add():void{
+    if(this.nuevo.nombre.trim().length ===0){
+      return;
+    }
+
+    this.onNuevoClientes.emit(this.nuevo);
+
+
+    this.nuevo = {
+      nombre:"",
+      apellidos:"",
+      empresa:"",
+      puesto:"",
+      cp:0,
+      provincia:"",
+      telefono:0,
+      fechaNacimineto: new Date()
+    }
+  }
+
+  constructor(){}
 
   ngOnInit(): void {
   }
