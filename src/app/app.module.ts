@@ -14,7 +14,7 @@ import { ClientesModule } from './components/clientes/clientes.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ArticulosModule
+    ArticulosModule,
     ComprasModule,
     ClientesModule
   ],
