@@ -7,8 +7,8 @@ import { ArticuloService } from 'src/app/services/articulos.service';
   templateUrl: './show-articulo.component.html',
 })
 export class ShowArticuloComponent implements OnInit {
-  constructor(private articuloService: ArticuloService) {}
 
+  constructor() {}
 
   ngOnInit(): void {}
 
