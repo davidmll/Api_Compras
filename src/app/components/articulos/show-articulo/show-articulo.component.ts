@@ -5,7 +5,6 @@ import { ArticuloService } from 'src/app/services/articulos.service';
 @Component({
   selector: 'app-show-articulo',
   templateUrl: './show-articulo.component.html',
-  styleUrls: ['./show-articulo.component.css'],
 })
 export class ShowArticuloComponent implements OnInit {
   constructor(private articuloService: ArticuloService) {}
