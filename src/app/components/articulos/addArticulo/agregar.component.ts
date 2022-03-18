@@ -25,7 +25,7 @@ export class AgregarComponent implements OnInit {
     securityStock:0,
     imagen:''
   }
-  @Output() onNuevoArticulo:EventEmitter<Articulos>=new EventEmitter()
+  @Output() onNuevoArticulo:EventEmitter<Articulos>=new EventEmitter();
 
   agregar():void{
     if(this.nuevo.nombre.trim().length===0){
