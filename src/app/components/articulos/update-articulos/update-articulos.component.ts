@@ -1,21 +1,21 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Articulos } from 'src/app/interfaces/articulos.interfaces';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Articulos } from 'src/app/interfaces/articulos';
 
 @Component({
   selector: 'app-update-articulos',
   templateUrl: './update-articulos.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class UpdateArticulosComponent implements OnInit {
 
-  @Input() articulos:Articulos[]=[];
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-  update(e:number):void{
+  @Input() articulos: Articulos[] = [];
+  @Output() onEditArticulo: EventEmitter<Articulos> = new EventEmitter();
+
+  update(e: number): void {
     console.log(e);
   }
 }
