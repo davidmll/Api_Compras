@@ -42,7 +42,7 @@ export class ShowClientesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  clientes: Clientes[] = [
+  /* clientes: Clientes[] = [
     {
       codCliente:1001,
       nombre:"Ronaldo",
@@ -70,6 +70,6 @@ export class ShowClientesComponent implements OnInit {
 
   agregarNuevoClientes(clientes: Clientes):void{
     console.log(clientes);
-  }
+  } */
 
 }

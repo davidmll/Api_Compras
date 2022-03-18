@@ -14,7 +14,6 @@ export class MenuComponent implements OnInit {
         {
           label:'Clientes',
           icon:'pi pi-fw pi-users',
-          //routerLink: 'clientes',
           items:[
             {
               label:'Nuevo',
@@ -30,8 +29,7 @@ export class MenuComponent implements OnInit {
         },
         {
           label:'Artículos',
-          icon:'pi pi-fw pi-pencil',
-          //routerLink: 'articulos',
+          icon:'pi pi-fw pi-shopping-cart',
           items:[
             {
               label:'Nuevo',
@@ -47,8 +45,7 @@ export class MenuComponent implements OnInit {
         },
         {
           label:'Compras',
-          icon:'pi pi-fw pi-user',
-          //routerLink: 'compras',
+          icon:'pi pi-fw pi-wallet',
           items:[
             {
               label:'Nueva',

@@ -42,8 +42,7 @@ export class AddClientesComponent implements OnInit {
       cp:0,
       provincia:"",
       telefono:0,
-      fechaNacimiento: new Date(),
-      codCliente:0
+      fechaNacimiento: new Date()
     }
   }
 
