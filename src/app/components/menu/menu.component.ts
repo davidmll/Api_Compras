@@ -56,7 +56,7 @@ export class MenuComponent implements OnInit {
               routerLink: 'compras/nueva'
             },
             {
-              label:'Lista de ventas',
+              label:'Lista de compras',
               icon:'pi pi-fw pi-user-minus',
               routerLink: 'compras'
             }
