@@ -1,1 +1,28 @@
-<p>table-clientes works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>nombre</th>
+      <th>Apellidos</th>
+      <th>Empresa</th>
+      <th>Puesto</th>
+      <th>CP</th>
+      <th>Provincia</th>
+      <th>Teléfono</th>
+      <th>Fecha</th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of clientes">
+      <td>{{ item.nombre }}</td>
+      <td>{{ item.apellidos }}</td>
+      <td>{{ item.empresa }}</td>
+      <td>{{ item.puesto}}</td>
+      <td>{{ item.cp }}</td>
+      <td>{{ item.provincia }}</td>
+      <td>{{item.telefono}}</td>
+      <td>{{item.date | date:'EEEE, MMMM d, y'}}</td>
+      <td><button>Del</button><button>Edit</button></td>
+    </tr>
+  </tbody>
+</table>
