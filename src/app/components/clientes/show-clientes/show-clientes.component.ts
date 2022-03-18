@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Clientes } from 'src/app/interfaces/clientes';
+import { ClientesService } from 'src/app/services/clientes.service';
 
 @Component({
   selector: 'app-show-clientes',
@@ -7,9 +9,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowClientesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private clientesService: ClientesService) { }
 
   ngOnInit(): void {
+  }
+
+  clientes: Clientes[] = [
+    {
+      codCliente:1001,
+      nombre:"Ronaldo",
+      apellidos:"Lopez",
+      empresa:"Loyal",
+      puesto:"Formador",
+      cp:34080,
+      provincia:"Madrid",
+      telefono:66665666,
+      fechaNacimineto: new Date()
+    }
+  ]
+
+  nuevo: Clientes={
+    codCliente:0,
+    nombre:"",
+    apellidos:"",
+    empresa:"",
+    puesto:"",
+    cp:0,
+    provincia:"",
+    telefono:0,
+    fechaNacimineto: new Date()
+  }
+
+  agregarNuevoClientes(clientes: Clientes):void{
+    console.log(clientes);
   }
 
 }

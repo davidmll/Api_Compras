@@ -1,1 +1,15 @@
-<p>show-clientes works!</p>
+<h1>Clientes</h1>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <h3>Clientes</h3>
+    <hr />
+
+      <app-table-clientes [clientes]="clientes"></app-table-clientes>
+  </div>
+
+  <div class="col">
+    <app-add-clientes [clientes]="clientes" (onNuevoClientes)="agregarNuevoClientes($event)"></app-add-clientes>
+  </div>
+</div>

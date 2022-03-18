@@ -11,6 +11,7 @@ export class AddClientesComponent implements OnInit {
 
   @Input() clientes:Clientes[] = [];
   @Input() nuevo:Clientes={
+    codCliente:0,
     nombre:"",
     apellidos:"",
     empresa:"",
@@ -32,8 +33,8 @@ export class AddClientesComponent implements OnInit {
 
     this.onNuevoClientes.emit(this.nuevo);
 
-
     this.nuevo = {
+      codCliente:0,
       nombre:"",
       apellidos:"",
       empresa:"",
