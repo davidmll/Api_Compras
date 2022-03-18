@@ -14,4 +14,6 @@ export class ArticulosComponent implements OnInit {
   }
   @Input() articulo:any[]=[];
 
+  update(num:number){}
+
 }

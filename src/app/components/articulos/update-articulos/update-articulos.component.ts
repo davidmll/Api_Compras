@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Articulos } from 'src/app/interfaces/articulos.interfaces';
+import { Articulos } from 'src/app/interfaces/articulos';
+
 
 @Component({
   selector: 'app-update-articulos',
