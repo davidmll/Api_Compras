@@ -11,15 +11,15 @@ export class AddClientesComponent implements OnInit {
 
   @Input() clientes:Clientes[] = [];
   @Input() nuevo:Clientes={
-    codCliente:0,
-    nombre:"",
-    apellidos:"",
-    empresa:"",
-    puesto:"",
-    cp:0,
-    provincia:"",
-    telefono:0,
-    fechaNacimineto: new Date()
+    nombre: "",
+    apellidos: "",
+    empresa: "",
+    puesto: "",
+    cp: 0,
+    provincia: "",
+    telefono: 0,
+    fechaNacimiento: new Date(),
+    codCliente: 0
   }
 
   @Output() onNuevoClientes: EventEmitter<Clientes> = new EventEmitter()
@@ -42,7 +42,7 @@ export class AddClientesComponent implements OnInit {
       cp:0,
       provincia:"",
       telefono:0,
-      fechaNacimineto: new Date()
+      fechaNacimiento: new Date()
     }
   }
 
