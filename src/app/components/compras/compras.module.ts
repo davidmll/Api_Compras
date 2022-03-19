@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AddComprasComponent } from './add-compras/add-compras.component';
 import { UpdateComprasComponent } from './update-compras/update-compras.component';
 import { ShowComprasComponent } from './show-compras/show-compras.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableComprasComponent } from './table-compras/table-compras.component';
 
-
+import { PrimengModule } from 'src/app/modules/prime-ng/primeng.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { TableComprasComponent } from './table-compras/table-compras.component';
     TableComprasComponent
   ],
   imports: [
-    CommonModule,FormsModule,ReactiveFormsModule
+    CommonModule,FormsModule,ReactiveFormsModule,PrimengModule
   ],
   exports:[
     AddComprasComponent,

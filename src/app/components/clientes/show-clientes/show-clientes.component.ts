@@ -9,12 +9,40 @@ import { ClientesService } from 'src/app/services/clientes.service';
 })
 export class ShowClientesComponent implements OnInit {
 
-  constructor(private clientesService: ClientesService) { }
+  // Prueba
+  clientes:Clientes[] = [];
+  cliente:Clientes = {
+    codCliente: 1,
+    nombre: 'pepe',
+    apellidos: 'perez perez',
+    empresa: 'Capgemini',
+    puesto: 'Programador',
+    cp: 11111,
+    provincia: 'Lugo',
+    telefono: 912912,
+    fechaNacimiento: new Date()
+  }
+  cliente2:Clientes = {
+    codCliente: 2,
+    nombre: 'pepa',
+    apellidos: 'perez perez',
+    empresa: 'Otra empresa',
+    puesto: 'jefe',
+    cp: 11111,
+    provincia: 'Gojón',
+    telefono: 912912,
+    fechaNacimiento: new Date()
+  }
+
+  constructor() {
+    this.clientes.push(this.cliente); //prueba
+    this.clientes.push(this.cliente2);
+  }
 
   ngOnInit(): void {
   }
 
-  clientes: Clientes[] = [
+  /* clientes: Clientes[] = [
     {
       codCliente:1001,
       nombre:"Ronaldo",
@@ -42,6 +70,6 @@ export class ShowClientesComponent implements OnInit {
 
   agregarNuevoClientes(clientes: Clientes):void{
     console.log(clientes);
-  }
+  } */
 
 }

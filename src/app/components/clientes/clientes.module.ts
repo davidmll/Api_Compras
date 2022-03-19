@@ -4,27 +4,18 @@ import { AddClientesComponent } from './add-clientes/add-clientes.component';
 import { ShowClientesComponent } from './show-clientes/show-clientes.component';
 import { UpdateClientesComponent } from './update-clientes/update-clientes.component';
 import { FormsModule } from '@angular/forms';
-import { TableClientesComponent } from './table-clientes/table-clientes.component';
-import { ClientesService } from 'src/app/services/clientes.service';
+import { PrimengModule } from 'src/app/modules/prime-ng/primeng.module';
 
 @NgModule({
   declarations: [
     AddClientesComponent,
     ShowClientesComponent,
-    UpdateClientesComponent,
-    TableClientesComponent
+    UpdateClientesComponent
   ],
   imports: [
     CommonModule,
-    FormsModule
-  ],
-  exports: [
-    AddClientesComponent,
-    ShowClientesComponent,
-    TableClientesComponent
-  ],
-  providers:[
-    ClientesService
+    FormsModule,
+    PrimengModule
   ]
 })
 export class ClientesModule {}

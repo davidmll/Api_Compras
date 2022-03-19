@@ -4,16 +4,23 @@ import { CommonModule } from '@angular/common';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuComponent } from 'src/app/components/menu/menu.component';
 
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+
 @NgModule({
   declarations: [
     MenuComponent
   ],
   imports: [
     CommonModule,
-    MenubarModule
+    MenubarModule,
+    TableModule,
+    ButtonModule
   ],
   exports: [
-    MenuComponent
+    MenuComponent,
+    TableModule,
+    ButtonModule
   ]
 })
 export class PrimengModule { }
