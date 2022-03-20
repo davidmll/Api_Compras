@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddComprasComponent } from './add-compras/add-compras.component';
 import { UpdateComprasComponent } from './update-compras/update-compras.component';
 import { ShowComprasComponent } from './show-compras/show-compras.component';
-import { TableComprasComponent } from './table-compras/table-compras.component';
 
 import { PrimengModule } from 'src/app/modules/prime-ng/primeng.module';
 
@@ -13,8 +12,7 @@ import { PrimengModule } from 'src/app/modules/prime-ng/primeng.module';
   declarations: [
     AddComprasComponent,
     UpdateComprasComponent,
-    ShowComprasComponent,
-    TableComprasComponent
+    ShowComprasComponent
   ],
   imports: [
     CommonModule,FormsModule,ReactiveFormsModule,PrimengModule
@@ -22,8 +20,7 @@ import { PrimengModule } from 'src/app/modules/prime-ng/primeng.module';
   exports:[
     AddComprasComponent,
     UpdateComprasComponent,
-    ShowComprasComponent,
-    TableComprasComponent
+    ShowComprasComponent
   ]
 })
 export class ComprasModule { }

@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Subject } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Compras } from 'src/app/interfaces/compras';
 import { ComprasService } from 'src/app/services/compras.service';
 
@@ -13,7 +13,9 @@ export class AddComprasComponent implements OnInit {
 
   formularioCompras!: FormGroup;
 
-  constructor(private serviceCompra: ComprasService) {}
+  colleccionCompra : Compras[] = [];
+
+  constructor(private serviceCompra: ComprasService,private router: Router) {}
 
   ngOnInit(): void {
     this.formularioCompras = new FormGroup({
@@ -25,18 +27,12 @@ export class AddComprasComponent implements OnInit {
     });
   }
 
-  ver() {
+  addCompra(){
     const data = this.formularioCompras.value;
-    this.serviceCompra.AddCompra(data).subscribe(
-      ()=>{
-        console.log("Compra add");
 
-      },
-      (error)=>{
-        console.log("Compra error" + error);
+    this.serviceCompra.agregarCompra(data);
 
-      }
-    );
+    this.router.navigate(["/compras"]);
 
   }
 }
