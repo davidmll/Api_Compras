@@ -1,0 +1,44 @@
+<p-table [value]="clientes" responsiveLayout="stack">
+  <ng-template pTemplate="caption">
+    <div class="flex align-items-center justify-content-between">
+      <h2>Clientes</h2>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Empresa</th>
+      <th>Puesto</th>
+      <th>Código postal</th>
+      <th>Provincia</th>
+      <th>Teléfono</th>
+      <th>Fecha de nacimiento</th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-clientes>
+    <tr>
+        <td>{{clientes.codCliente}}</td>
+        <td>{{clientes.nombre}}</td>
+        <td>{{clientes.apellidos}}</td>
+        <td>{{clientes.empresa}}</td>
+        <td>{{clientes.puesto}}</td>
+        <td>{{clientes.cp}}</td>
+        <td>{{clientes.provincia}}</td>
+        <td>{{clientes.telefono}}</td>
+        <td>{{clientes.fechaNacimiento }}</td>
+        <td>
+        <button pButton icon="pi pi-pencil" type="button" class="p-button-warning" (click)="redirigirUpdate(clientes)"></button>
+        <span style="margin: auto 5px"></span>
+        <button pButton icon="pi pi-trash" type="button" class="p-button-danger" (click)="eliminarClientes()"></button>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+    <div class="flex align-items-center justify-content-between">
+        En total hay {{clientes ? clientes.length : 0 }} clientes.
+    </div>
+  </ng-template>
+</p-table>
