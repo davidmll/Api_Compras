@@ -20,7 +20,17 @@ export class ComprasService {
     return this.compras;
   }
 
-  updateCompras(){
+  eliminarCompra(){
+    return this.compras.pop()
+  }
+
+  updateCompras(compra:Compras){
+
+    for (let i = 0; i < this.compras.length; i++) {
+      if(i = )
+      
+    }
+    this.compras.push(compra);
     return this.updateCompra;
   }
 }
