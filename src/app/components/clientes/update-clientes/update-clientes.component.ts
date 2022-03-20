@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Clientes } from 'src/app/interfaces/clientes';
 import { ClientesService } from 'src/app/services/clientes.service';
 
 @Component({
@@ -10,27 +12,34 @@ import { ClientesService } from 'src/app/services/clientes.service';
 export class UpdateClientesComponent implements OnInit {
   formularioClientes!: FormGroup;
 
-  constructor(private servicio:ClientesService) {}
+  cliente!: Clientes;
+
+  valor: any;
+
+  constructor(private servicio:ClientesService, private ruta: Router) {}
 
   ngOnInit(): void {
 
-    this.formularioClientes = new FormGroup({
-      nombre: new FormControl('', Validators.required),
-      apellidos: new FormControl('', Validators.required),
-      empresa: new FormControl('', Validators.required),
-      puesto: new FormControl('', Validators.required),
-      cp: new FormControl('', Validators.required),
-      provincia: new FormControl('', Validators.required),
-      telefono: new FormControl('', Validators.required),
-      fechaNacimiento: new FormControl('', Validators.required)
+      this.valor = this.servicio.updateCliente;
 
-    });
+      this.cliente = {
+      codCliente: this.valor.codCliente,
+      nombre: this.valor.nombre,
+      apellidos: this.valor.apellidos,
+      empresa: this.valor.empresa,
+      puesto: this.valor.puesto,
+      cp: this.valor.cp,
+      provincia: this.valor.provincia,
+      telefono: this.valor.telefono,
+      fechaNacimiento: this.valor.fechaNacimiento
+
+    }
 
   }
 
   update(): void {
-    this.servicio.updateClientes(this.formularioClientes.value);
-    console.log(this.servicio);
+    this.servicio.updateClientes(this.cliente, this.cliente.codCliente);
+    this.ruta.navigate(['/clientes']);
   }
 
 }
