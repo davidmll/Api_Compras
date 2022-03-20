@@ -20,7 +20,7 @@
   </ng-template>
   <ng-template pTemplate="body" let-clientes>
     <tr>
-      <td>{{clientes.codCliente}}</td>
+        <td>{{clientes.codCliente}}</td>
         <td>{{clientes.nombre}}</td>
         <td>{{clientes.apellidos}}</td>
         <td>{{clientes.empresa}}</td>
@@ -28,7 +28,7 @@
         <td>{{clientes.cp}}</td>
         <td>{{clientes.provincia}}</td>
         <td>{{clientes.telefono}}</td>
-        <td>{{clientes.fechaNacimiento | date:'dd-MM-YYY'}}</td>
+        <td>{{clientes.fechaNacimiento }}</td>
         <td>
         <button pButton icon="pi pi-pencil" type="button" class="p-button-warning" (click)="redirigirUpdate(clientes)"></button>
         <span style="margin: auto 5px"></span>
