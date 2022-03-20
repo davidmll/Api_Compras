@@ -6,6 +6,7 @@ import { ArticuloService } from '../../services/articulos.service';
 import { UpdateArticulosComponent } from './update-articulos/update-articulos.component';
 import { ShowArticuloComponent } from './show-articulo/show-articulo.component';
 import { RouterModule } from '@angular/router';
+import { PrimengModule } from 'src/app/modules/prime-ng/primeng.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { RouterModule } from '@angular/router';
     ShowArticuloComponent,
     UpdateArticulosComponent,
   ],
-  imports: [CommonModule, FormsModule, RouterModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, PrimengModule],
   exports: [AgregarComponent, ShowArticuloComponent, UpdateArticulosComponent],
   providers: [ArticuloService],
 })

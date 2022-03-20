@@ -1,14 +1,73 @@
-<!-- <p>update-articulos works!</p> -->
-<h3>Editar artículo</h3>
-<hr>
-<form (ngSubmit)="update()" [formGroup]="formularioUpdateArti">
-  <!-- <input type="number" name="codigo" placeholder="Codigo"  formControlName="codArticulo"> -->
-  <input type="text" name="nombre" placeholder="Nombre"  formControlName="nombre">
-  <input type="text" name="desc" placeholder="Descripción" formControlName="descripcion">
-  <input type="number" name="precio" placeholder="Precio unitario" formControlName="precio">
-  <input type="number" name="stock" placeholder="Unidades de Stock" formControlName="stock">
-  <input type="number" name="security" placeholder="Stock de Seguridad" formControlName="securityStock">
-  <input type="text" name="image" placeholder="Imagen" formControlName="imagen">
+<div
+  class="surface-card p-4 shadow-2 border-round w-full lg:w-4"
+  style="margin: 10px auto"
+>
+  <h2 class="text-center">Editar Artículo</h2>
+  <form (ngSubmit)="update()">
+    <label for="nombre" class="block text-900 font-medium mb-2">Nombre</label>
+    <input
+      id="nombre"
+      type="text"
+      pInputText
+      class="w-full mb-3"
+      name="nombre"
+      placeholder="Nombre"
+      [(ngModel)]="articulo.nombre"
+    />
 
-  <button type="submit">Confirmar</button>
-</form>
+    <label for="descripcion" class="block text-900 font-medium mb-2"
+      >Descripción</label
+    >
+    <input
+      id="descripcion"
+      type="text"
+      pInputText
+      class="w-full mb-3"
+      name="desc"
+      placeholder="Descripción"
+      [(ngModel)]="articulo.descripcion"
+    />
+
+    <label for="precio" class="block text-900 font-medium mb-2">Precio</label>
+    <p-inputNumber
+      id="precio"
+      class="w-full mb-3"
+      name="precio"
+      placeholder="Precio unitario"
+      [(ngModel)]="articulo.precio"
+    ></p-inputNumber>
+
+    <label for="stock" class="block text-900 font-medium mb-2">Stock</label>
+    <p-inputNumber
+      id="stock"
+      class="w-full mb-3"
+      name="stock"
+      placeholder="Unidades de Stock"
+      [(ngModel)]="articulo.stock"
+    ></p-inputNumber>
+
+    <label for="stockSec" class="block text-900 font-medium mb-2"
+      >Stock de seguridad</label
+    >
+    <p-inputNumber
+      id="stockSec"
+      class="w-full mb-3"
+      name="security"
+      placeholder="Stock de Seguridad"
+      [(ngModel)]="articulo.securityStock"
+    ></p-inputNumber>
+
+    <label for="imagen" class="block text-900 font-medium mb-2">Imágen</label>
+    <input
+      id="imagen"
+      type="text"
+      pInputText
+      class="w-full mb-3"
+      name="image"
+      placeholder="Imagen"
+      [(ngModel)]="articulo.imagen"
+    />
+
+    <button pButton pRipple label="Actualizar" class="w-full"></button>
+  </form>
+</div>

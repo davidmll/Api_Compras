@@ -13,7 +13,6 @@ export class ArticuloService {
   }
 
   constructor() {
-    // console.log('Servicio iniciado');
   }
 
   addArticulos(articulo: Articulos) {

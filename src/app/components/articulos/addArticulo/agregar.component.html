@@ -3,7 +3,7 @@
   style="margin: 10px auto"
 >
   <h2 class="text-center">Nuevo Artículo</h2>
-  <form>
+  <form (ngSubmit)="agregar()" [formGroup]="formularioArti">
     <label for="nombre" class="block text-900 font-medium mb-2">Nombre</label>
     <input
       id="nombre"

@@ -15,13 +15,11 @@ export class ShowArticuloComponent implements OnInit {
 
   ngOnInit(): void {
     this.articulo = this.servicio.getArticulos();
-    // console.log(this.articulo);
   }
 
   redirigirUpdate(app: Articulos[]){
     this.ruta.navigate(["articulos/update"]);
     this.servicio.updateArticulo = app;
-
   }
 
   eliminarArticulo(){
