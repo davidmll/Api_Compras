@@ -9,7 +9,7 @@ import { ArticuloService } from 'src/app/services/articulos.service';
 })
 export class ShowArticuloComponent implements OnInit {
 
-  articulo: Articulos[]= [];
+  articulo: Articulos[] = [];
 
   constructor(private servicio:ArticuloService, private ruta: Router) { }
 
