@@ -1,0 +1,21 @@
+<h3>Update COmpra</h3>
+<hr>
+<!-- <form  (ngSubmit)="updateCompra()" [formGroup]="formularioUpdateCompras">
+  <input type="text"  placeholder="Id: " formControlName="codCompra">
+  <input type="text"  placeholder="Cliente: " formControlName="codCliente">
+  <input type="text" placeholder="Articulo: " formControlName="codArticulo">
+  <input type="date" placeholder="Nuevo Puesto: " formControlName="fecha">
+  <input type="number"  placeholder="Unidades: " formControlName="unidades">
+  <button type="submit">Agregar</button>
+</form> -->
+
+<form  (ngSubmit)="updateCompra()" >
+  <input type="text" name="codCompra" placeholder="Id: " [(ngModel)]="compra.codCompra">
+  <input type="text" name="codCliente" placeholder="Cliente: " [(ngModel)]="compra.codCliente">
+  <input type="text" name="codArticulo" placeholder="Articulo: " [(ngModel)]="compra.codArticulo">
+  <input type="date" name="fecha" placeholder="Nuevo Puesto: " [(ngModel)]="compra.fecha">
+  <input type="number"  name="unidades" placeholder="Unidades: " [(ngModel)]="compra.unidades">
+  <button type="submit">Agregar</button>
+</form>
+
+

@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'articulos/update/:id', component: UpdateArticulosComponent },
   { path: 'compras', component: ShowComprasComponent },
   { path: 'compras/nueva', component: AddComprasComponent },
-  { path: 'compras/update/:id', component: UpdateComprasComponent },
+  { path: 'compras/update', component: UpdateComprasComponent },
   { path: '**', redirectTo: '' }
 ];
 

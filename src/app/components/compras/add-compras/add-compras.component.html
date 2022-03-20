@@ -1,20 +1,18 @@
 <div class="surface-card p-4 shadow-2 border-round w-full lg:w-4" style="margin: 10px auto">
   <h2 class="text-center">Nueva Compra</h2>
-  <form>
+  <form (ngSubmit)="addCompra()" [formGroup]="formularioCompras">
       <label for="cliente" class="block text-900 font-medium mb-2">Cliente</label>
-      <input id="cliente" type="text" pInputText class="w-full mb-3">
-      <!-- <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City" optionLabel="name" [showClear]="true"></p-dropdown> -->
+      <input id="cliente" type="text" pInputText class="w-full mb-3" name="codCliente" placeholder="Cliente: " formControlName="codCliente">
 
       <label for="articulo" class="block text-900 font-medium mb-2">Artículo</label>
-      <input id="articulo" type="text" pInputText class="w-full mb-3">
+      <input id="articulo" type="text" pInputText class="w-full mb-3" name="codArticulo" placeholder="Articulo: " formControlName="codArticulo">
 
       <label for="fecha" class="block text-900 font-medium mb-2">Fecha</label>
-      <input id="fecha" type="date" pInputDate class="w-full mb-3">
+      <input id="fecha" type="date" pInputDate class="w-full mb-3" name="fecha" placeholder="Nuevo Puesto: " formControlName="fecha">
 
       <label for="unidades" class="block text-900 font-medium mb-2">Unidades</label>
-      <p-inputNumber id="unidades" class="w-full mb-3"></p-inputNumber>
+      <p-inputNumber id="unidades" class="w-full mb-3"></p-inputNumber name="unidades" placeholder="Unidades: " formControlName="unidades">
 
       <button pButton pRipple label="Guardar" class="w-full"></button>
   </form>
 </div>
-
