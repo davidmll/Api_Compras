@@ -8,8 +8,6 @@ import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
-import { CalendarModule } from 'primeng/calendar';
-import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -21,9 +19,7 @@ import { DropdownModule } from 'primeng/dropdown';
     TableModule,
     ButtonModule,
     InputTextModule,
-    InputNumberModule,
-    CalendarModule,
-    DropdownModule
+    InputNumberModule
   ],
   exports: [
     MenuComponent,
@@ -31,9 +27,7 @@ import { DropdownModule } from 'primeng/dropdown';
     TableModule,
     ButtonModule,
     InputTextModule,
-    InputNumberModule,
-    CalendarModule,
-    DropdownModule
+    InputNumberModule
   ]
 })
 export class PrimengModule { }

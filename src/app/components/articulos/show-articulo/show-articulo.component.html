@@ -26,9 +26,9 @@
         <td>{{art.securityStock }}</td>
         <td><img src="{{art.imagen}}"  width="100" class="shadow-4" /></td>
         <td>
-          <button pButton icon="pi pi-pencil" type="button" class="p-button-warning"></button>
+          <button pButton icon="pi pi-pencil" type="button" class="p-button-warning" (click)="redirigirUpdate(art)"></button>
           <span style="margin: auto 5px"></span>
-          <button pButton icon="pi pi-trash" type="button" class="p-button-danger"></button>
+          <button pButton icon="pi pi-trash" type="button" class="p-button-danger" (click)="eliminarArticulo()"></button>
       </tr>
   </ng-template>
   <ng-template pTemplate="summary">
@@ -37,4 +37,3 @@
       </div>
   </ng-template>
 </p-table>
-
