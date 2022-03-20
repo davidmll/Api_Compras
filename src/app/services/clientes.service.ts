@@ -5,7 +5,7 @@ import { Clientes } from '../interfaces/clientes';
 @Injectable()
 export class ClientesService {
 
-  private _clientes: Clientes[] = [
+  clientes: Clientes[] = [
     {
       codCliente:1001,
       nombre:"Rosendo",
@@ -19,18 +19,29 @@ export class ClientesService {
     }
   ]
 
-  get clientes():Clientes[]{
-    return[...this._clientes];
-  }
-
-  constructor(){
-    console.log("Servicio iniciado");
-  }
+  constructor() {}
 
   addClientes(clientes: Clientes) {
-    this._clientes.push(clientes);
+    this.clientes.push(clientes);
+
     clientes.codCliente = this.clientes.length;
   }
 
+  getClientes(): Clientes[] {
+    return this.clientes;
+  }
 
+  eliminarClientes() {
+    return this.clientes.pop();
+  }
+
+  updateClientes(clientes: Clientes, id: number) {
+    for (let i = 0; i < this.clientes.length; i++) {
+      if (this.clientes[i].codCliente === id) {
+        this.clientes[i] = clientes;
+      } else {
+        console.log('No se puede sustituir');
+      }
+    }
+  }
 }

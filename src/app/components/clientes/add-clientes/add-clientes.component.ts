@@ -1,5 +1,6 @@
 import { Component,  OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ClientesService } from 'src/app/services/clientes.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class AddClientesComponent implements OnInit {
 
   formularioClientes!: FormGroup;
 
-  constructor(private servicio:ClientesService) { }
+  constructor(private servicio:ClientesService, private router: Router) {}
 
   ngOnInit(): void {
 
@@ -29,9 +30,12 @@ export class AddClientesComponent implements OnInit {
     });
   }
 
-  add():void{
-    this.servicio.addClientes(this.formularioClientes.value);
-    console.log(this.servicio);
+  addClientes():void{
+    const data = this.formularioClientes.value;
+
+    this.servicio.addClientes(data);
+
+    this.router.navigate(["/clientes"]);
   }
 
 }

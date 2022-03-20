@@ -1,1 +1,14 @@
-<p>update-clientes works!</p>
+<h3>Editar artículo</h3>
+<hr>
+<form (ngSubmit)="update()" [formGroup]="formularioClientes">
+  <input type="text" name="nombre" placeholder="Nuevo Nombre: " formControlName="nombre">
+  <input type="text" name="apellidos" placeholder="Apellidos: " formControlName="apellidos">
+  <input type="text" name="empresa" placeholder="Empresa: " formControlName="empresa">
+  <input type="text" name="puesto" placeholder="Nuevo Puesto: " formControlName="puesto">
+  <input type="number" name="CP" placeholder="Codigo Postal: " formControlName="cp">
+  <input type="text" name="provincia" placeholder="Provincia: " formControlName="provincia">
+  <input type="number" name="telefono" placeholder="Nuevo Telefono: " formControlName="telefono">
+  <input type="date" name="fecha" placeholder="Fecha: " formControlName="fechaNacimiento">
+
+  <button type="submit">Actualizar</button>
+</form>
