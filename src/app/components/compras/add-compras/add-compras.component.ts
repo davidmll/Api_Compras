@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Compras } from 'src/app/interfaces/compras';
 import { ComprasService } from 'src/app/services/compras.service';
 
@@ -19,11 +19,11 @@ export class AddComprasComponent implements OnInit {
 
   ngOnInit(): void {
     this.formularioCompras = new FormGroup({
-      codCompra: new FormControl('', Validators.required),
-      codCliente: new FormControl('', Validators.required),
-      codArticulo: new FormControl('', Validators.required),
+      codCompra: new FormControl(0, Validators.required),
+      codCliente: new FormControl(0, Validators.required),
+      codArticulo: new FormControl(0, Validators.required),
       fecha: new FormControl(''),
-      unidades: new FormControl('', Validators.required),
+      unidades: new FormControl(0, Validators.required),
     });
   }
 

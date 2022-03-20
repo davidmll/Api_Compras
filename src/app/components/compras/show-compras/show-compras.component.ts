@@ -22,4 +22,8 @@ export class ShowComprasComponent implements OnInit {
     this.serviceCompra.updateCompra = app;
 
   }
+
+  eliminarCompra(){
+    this.serviceCompra.eliminarCompra();
+  }
 }
