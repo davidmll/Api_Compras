@@ -1,0 +1,9 @@
+<h3>Nuevo Compra</h3>
+<hr>
+<form  (ngSubmit)="addCompra()" [formGroup]="formularioCompras">
+  <input type="text" name="codCliente" placeholder="Cliente: " formControlName="codCliente">
+  <input type="text" name="codArticulo" placeholder="Articulo: " formControlName="codArticulo">
+  <input type="date" name="fecha" placeholder="Nuevo Puesto: " formControlName="fecha">
+  <input type="number" name="unidades" placeholder="Unidades: " formControlName="unidades">
+  <button type="submit">Agregar</button>
+</form>

@@ -1,3 +1,6 @@
+
+<!-- <app-table-compras></app-table-compras> -->
+
 <p-table [value]="compras" responsiveLayout="stack">
   <ng-template pTemplate="caption">
     <div class="flex align-items-center justify-content-between">
@@ -16,15 +19,15 @@
   </ng-template>
   <ng-template pTemplate="body" let-compra>
     <tr>
-      <td>{{compra.idCompra}}</td>
+      <td>{{compra.codCompra}}</td>
       <td>{{compra.codCliente}}</td>
       <td>{{compra.codArticulo}}</td>
-      <td>{{compra.fecha | date:'dd-MM-YYY'}}</td>
+      <td>{{compra.fecha}}</td>
       <td>{{compra.unidades}}</td>
       <td>
-        <button pButton icon="pi pi-pencil" type="button" class="p-button-warning"></button>
+        <button pButton icon="pi pi-pencil" type="button" class="p-button-warning" (click)="redirigirUpdate(compra)"></button>
         <span style="margin: auto 5px"></span>
-        <button pButton icon="pi pi-trash" type="button" class="p-button-danger"></button>
+        <button pButton icon="pi pi-trash" type="button" class="p-button-danger" (click)="eliminarCompra()"></button>
       </td>
     </tr>
   </ng-template>
@@ -34,5 +37,3 @@
     </div>
   </ng-template>
 </p-table>
-
-
