@@ -1,20 +1,39 @@
-<!-- <p>main works!</p> -->
-<h1>Artículos</h1>
-<hr />
-
-<div class="row">
-  <div class="col-6">
-    <h3>Artículos</h3>
-    <hr />
-
-      <app-articulos [articulo]="articulo"></app-articulos>
-  </div>
-
-  <div class="col-6">
-    <app-agregar [articulos]="articulo" (onNuevoArticulo)="agregarNuevoArticulo($event)"></app-agregar>
-  </div>
-
-  <div class="col-12">
-    <app-update-articulos></app-update-articulos>
-  </div>
-</div>
+<p-table [value]="articulo" responsiveLayout="stack">
+  <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+          <h2>Artículos</h2>
+      </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+      <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Stock de seguridad</th>
+          <th>Imagen</th>
+          <th></th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-art>
+      <tr>
+        <td>{{art.codArticulo}}</td>
+        <td>{{art.nombre}}</td>
+        <td>{{art.descripcion}}</td>
+        <td>{{art.precio | currency: "EUR" }}</td>
+        <td>{{art.stock }}</td>
+        <td>{{art.securityStock }}</td>
+        <td><img src="{{art.imagen}}"  width="100" class="shadow-4" /></td>
+        <td>
+          <button pButton icon="pi pi-pencil" type="button" class="p-button-warning" (click)="redirigirUpdate(art)"></button>
+          <span style="margin: auto 5px"></span>
+          <button pButton icon="pi pi-trash" type="button" class="p-button-danger" (click)="eliminarArticulo()"></button>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+      <div class="flex align-items-center justify-content-between">
+          En total hay {{articulo ? articulo.length : 0 }} artículos.
+      </div>
+  </ng-template>
+</p-table>

@@ -8,6 +8,6 @@ export interface Clientes
   cp:number,
   provincia:string,
   telefono:number,
-  fechaNacimiento:Date
+  fechaNacimiento:string
 }
 

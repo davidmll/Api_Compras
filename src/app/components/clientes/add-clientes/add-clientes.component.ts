@@ -10,10 +10,10 @@ import { ClientesService } from 'src/app/services/clientes.service';
 })
 export class AddClientesComponent implements OnInit {
 
-
   formularioClientes!: FormGroup;
 
   constructor(private servicio:ClientesService, private router: Router) {}
+
 
   ngOnInit(): void {
 
