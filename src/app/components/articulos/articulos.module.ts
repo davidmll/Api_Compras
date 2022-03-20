@@ -17,4 +17,5 @@ import { RouterModule } from '@angular/router';
   exports: [AgregarComponent, ShowArticuloComponent, UpdateArticulosComponent],
   providers: [ArticuloService],
 })
+
 export class ArticulosModule {}

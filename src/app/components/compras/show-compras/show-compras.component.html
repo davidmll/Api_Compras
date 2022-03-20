@@ -1,0 +1,39 @@
+
+<!-- <app-table-compras></app-table-compras> -->
+
+<p-table [value]="compras" responsiveLayout="stack">
+  <ng-template pTemplate="caption">
+    <div class="flex align-items-center justify-content-between">
+      <h2>Compras</h2>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>#</th>
+      <th>Código cliente</th>
+      <th>Código articulo</th>
+      <th>Fecha</th>
+      <th>Unidades</th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-compra>
+    <tr>
+      <td>{{compra.codCompra}}</td>
+      <td>{{compra.codCliente}}</td>
+      <td>{{compra.codArticulo}}</td>
+      <td>{{compra.fecha}}</td>
+      <td>{{compra.unidades}}</td>
+      <td>
+        <button pButton icon="pi pi-pencil" type="button" class="p-button-warning" (click)="redirigirUpdate(compra)"></button>
+        <span style="margin: auto 5px"></span>
+        <button pButton icon="pi pi-trash" type="button" class="p-button-danger" (click)="eliminarCompra()"></button>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+    <div class="flex align-items-center justify-content-between">
+        En total hay {{compras ? compras.length : 0 }} clientes.
+    </div>
+  </ng-template>
+</p-table>
