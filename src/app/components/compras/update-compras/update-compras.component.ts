@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Compras } from 'src/app/interfaces/compras';
 import { ComprasService } from 'src/app/services/compras.service';
-import { ArticulosComponent } from '../../articulos/tableArticulo/articulos.component';
 
 @Component({
   selector: 'app-update-compras',
@@ -12,33 +10,26 @@ import { ArticulosComponent } from '../../articulos/tableArticulo/articulos.comp
 })
 export class UpdateComprasComponent implements OnInit {
 
+  compra!: Compras;
   formularioUpdateCompras: any;
-  valor:any;
+  valor: any;
 
-  constructor(private serviceCompra: ComprasService,private router:Router) {
-  }
-
-  compra! : Compras;
+  constructor(private serviceCompra: ComprasService, private router: Router) {}
 
   ngOnInit(): void {
-
     this.valor = this.serviceCompra.updateCompra;
-    console.log(this.valor);
 
     this.compra = {
-      "codCompra": this.valor.codCompra,
-      "codArticulo": this.valor.codArticulo,
-      "codCliente": this.valor.codCliente,
-      "fecha":this.valor.fecha,
-      "unidades":this.valor.unidades
-    }
+      codCompra: this.valor.codCompra,
+      codArticulo: this.valor.codArticulo,
+      codCliente: this.valor.codCliente,
+      fecha: this.valor.fecha,
+      unidades: this.valor.unidades,
+    };
   }
 
   updateCompra() {
-    this.router.navigate(["/compras"]);
-    console.log(this.compra);
-    this.serviceCompra.agregarCompra(this.compra);
-
-
+    this.router.navigate(['/compras']);
+    this.serviceCompra.updateCompras(this.compra, this.compra.codCompra);
   }
 }

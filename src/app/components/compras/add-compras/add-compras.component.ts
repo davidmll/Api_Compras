@@ -19,7 +19,6 @@ export class AddComprasComponent implements OnInit {
 
   ngOnInit(): void {
     this.formularioCompras = new FormGroup({
-      codCompra: new FormControl(0, Validators.required),
       codCliente: new FormControl(0, Validators.required),
       codArticulo: new FormControl(0, Validators.required),
       fecha: new FormControl(''),
