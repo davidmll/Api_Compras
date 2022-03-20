@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-add-compras',
-  template: `
-    <p>
-      add-compras works!
-    </p>
-  `,
+  templateUrl: './add-compras.component.html',
   styleUrls: ['./add-compras.component.css']
 })
 export class AddComprasComponent implements OnInit {
