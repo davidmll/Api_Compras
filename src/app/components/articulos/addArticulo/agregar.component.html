@@ -2,6 +2,7 @@
 <h3>Nuevo artículo</h3>
 <hr>
 <form (ngSubmit)="agregar()" [formGroup]="formularioArti">
+  <!-- <input type="number" name="codigo" placeholder="Codigo"  formControlName="codArticulo"> -->
   <input type="text" name="nombre" placeholder="Nombre"  formControlName="nombre">
   <input type="text" name="desc" placeholder="Descripción" formControlName="descripcion">
   <input type="number" name="precio" placeholder="Precio unitario" formControlName="precio">

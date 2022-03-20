@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Articulos } from 'src/app/interfaces/articulos';
 import { ArticuloService } from 'src/app/services/articulos.service';
 
@@ -9,26 +10,38 @@ import { ArticuloService } from 'src/app/services/articulos.service';
   styles: [],
 })
 export class UpdateArticulosComponent implements OnInit {
+  formularioUpdateArti!: FormGroup;
+  valor: any;
+  articulo!: Articulos;
 
-  formularioArti!: FormGroup;
+  constructor(private servicio: ArticuloService, private ruta: Router) {}
 
-  constructor(private servicio:ArticuloService) {}
-
+  // updateArticulo: Articulos = {
+  //   codArticulo: this.valor.codArticulo,
+  //   nombre: this.valor.nombre,
+  //   descripcion: this.valor.descripcion,
+  //   precio: this.valor.precio,
+  //   stock: this.valor.stock,
+  //   securityStock: this.valor.securityStock,
+  //   imagen: this.valor.imagen,
+  // };
 
   ngOnInit(): void {
-    this.formularioArti = new FormGroup({
+    this.valor = this.servicio.updateArticulos;
+
+    this.formularioUpdateArti = new FormGroup({
       nombre: new FormControl('', Validators.required),
       descripcion: new FormControl('', Validators.required),
       precio: new FormControl('', Validators.required),
       stock: new FormControl('', Validators.required),
       securityStock: new FormControl('', Validators.required),
-      imagen: new FormControl('', Validators.required)
-
+      imagen: new FormControl('', Validators.required),
     });
   }
 
-  update(id: number): void {
-    this.servicio.updateArticulos(id , this.formularioArti.value);
+  update(): void {
+    this.servicio.updateArticulos(this.articulo, this.articulo.codArticulo);
     console.log(this.servicio);
+    this.ruta.navigate(['/articulos']);
   }
 }

@@ -14,13 +14,13 @@ const routes: Routes = [
   { path: '', component: ShowClientesComponent, pathMatch: 'full' },
   { path: 'clientes', component: ShowClientesComponent },
   { path: 'clientes/nuevo', component: AddClientesComponent },
-  { path: 'clientes/update/:id', component: UpdateClientesComponent },
+  { path: 'clientes/update', component: UpdateClientesComponent },
   { path: 'articulos', component: ShowArticuloComponent },
   { path: 'articulos/nuevo', component:AgregarComponent },
-  { path: 'articulos/update/:id', component: UpdateArticulosComponent },
+  { path: 'articulos/update', component: UpdateArticulosComponent },
   { path: 'compras', component: ShowComprasComponent },
   { path: 'compras/nueva', component: AddComprasComponent },
-  { path: 'compras/update/:id', component: UpdateComprasComponent },
+  { path: 'compras/update', component: UpdateComprasComponent },
   { path: '**', redirectTo: '' }
 ];
 

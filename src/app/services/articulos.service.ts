@@ -3,22 +3,37 @@ import { Articulos } from '../interfaces/articulos';
 
 @Injectable()
 export class ArticuloService {
-  private _articulos: Articulos[] = [];
 
-  get articulos(): Articulos[] {
-    return [...this._articulos];
+  articulos: Articulos[] = [];
+
+  updateArticulo: any;
+
+  getArticulos(): Articulos[] {
+    return this.articulos;
   }
+
   constructor() {
-    console.log('Servicio iniciado');
+    // console.log('Servicio iniciado');
   }
 
   addArticulos(articulo: Articulos) {
-    this._articulos.push(articulo);
+    this.articulos.push(articulo);
     articulo.codArticulo = this.articulos.length;
   }
 
-  updateArticulos(codigo: number, articulo: Articulos) {
-    // this._articulos.indexOf(articulo);
-    this._articulos[codigo] = articulo;
+  updateArticulos( articulos: Articulos, id: number) {
+
+    for (let i = 0; i < this.articulos.length; i++) {
+      if(this.articulos[i].codArticulo === id){
+        this.articulos[i] = articulos;
+      }else{
+        console.log('a');
+      }
+    }
   }
+
+  deleteArticulos(){
+    this.articulos.pop();
+  }
+
 }

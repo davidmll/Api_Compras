@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Articulos } from 'src/app/interfaces/articulos';
 import { ArticuloService } from 'src/app/services/articulos.service';
 
@@ -8,21 +9,22 @@ import { ArticuloService } from 'src/app/services/articulos.service';
 })
 export class ShowArticuloComponent implements OnInit {
 
-  constructor() {}
+  articulo: Articulos[]= [];
 
-  ngOnInit(): void {}
+  constructor(private servicio:ArticuloService, private ruta: Router) { }
 
-  // articulo: Articulos[] = [
-  //   {
-  //     codArticulo: 1,
-  //     nombre: 'Portatil',
-  //     descripcion: 'Muy guapo',
-  //     precio: 150,
-  //     stock: 2,
-  //     securityStock: 1,
-  //     imagen:
-  //       'https://www.notebookcheck.org/typo3temp/_processed_/0/0/csm_laptop_awm17_r4_a6b63b8c71.jpg',
-  //   },
-  // ];
+  ngOnInit(): void {
+    this.articulo = this.servicio.getArticulos();
+    // console.log(this.articulo);
+  }
 
+  redirigirUpdate(app: Articulos[]){
+    this.ruta.navigate(["articulos/update"]);
+    this.servicio.updateArticulo = app;
+
+  }
+
+  eliminarArticulo(){
+    this.servicio.deleteArticulos();
+  }
 }
